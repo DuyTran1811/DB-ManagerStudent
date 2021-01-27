@@ -97,4 +97,4 @@ SELECT `name`,COUNT(`id`) 'Tong Cac Hoc Vien Trong Lop'FROM `ManagerStudent`.`Cl
 
 SELECT `name`, COUNT(`id`) 'Tổng số học viên ở các tỉnh' FROM `ManagerStudent`.`Address` GROUP BY `name`;
 
-SELECT `name`, AVG(`points`) 'Điểm Trung Bình Cac Lop' FROM `ManagerStudent`.`Point`INNER JOIN `Course` ON `Course`.`name`=`Point`.`points` GROUP BY `name`;
+SELECT `name`, AVG(`points`) 'Điểm Trung Bình Cac Lop' FROM `ManagerStudent`.`Point`INNER JOIN `Course` ON `Course`.`id`=`Point`.`id` GROUP BY `name`;
