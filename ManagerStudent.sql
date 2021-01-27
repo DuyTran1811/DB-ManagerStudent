@@ -85,8 +85,8 @@ INSERT INTO `ManagerStudent`.`Point` (`id`, `course_id`, `student_id`, `point`) 
 INSERT INTO `ManagerStudent`.`Point` (`id`, `course_id`, `student_id`, `point`) VALUES ('4', '4', '4', '8');
 INSERT INTO `ManagerStudent`.`Point` (`id`, `course_id`, `student_id`, `point`) VALUES ('5', '5', '5', '7');
 
-SELECT COUNT(`id`) 'Tong Cac Hoc Vien Trong Lop' FROM`Classes`;
+SELECT COUNT(`id`) 'Tong Cac Hoc Vien Trong Lop' FROM `ManagerStudent`.`Classes`;
 
-SELECT COUNT(`id`) 'Tổng số học viên ở các tỉnh' FROM `Address`;
+SELECT COUNT(`id`) 'Tổng số học viên ở các tỉnh' FROM `ManagerStudent`.`Address`;
 
-SELECT AVG(`points`) 'Điểm Trung Bình' FROM `Point`;
+SELECT AVG(`points`) 'Điểm Trung Bình Cac Lop' FROM `ManagerStudent`.`Point`;
