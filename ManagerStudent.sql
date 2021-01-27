@@ -48,18 +48,18 @@ ALTER TABLE `Point`
 ADD FOREIGN KEY(`student_id`)
 REFERENCES `Students` (`id`);
 
-INSERT INTO `ManagerStudent`.`Address`(`id`,`name`) VALUE('1', 'Tran Van A');
-INSERT INTO `ManagerStudent`.`Address`(`id`,`name`) VALUE('2', 'Tran Van B');
-INSERT INTO `ManagerStudent`.`Address`(`id`,`name`) VALUE('3', 'Tran Van C');
-INSERT INTO `ManagerStudent`.`Address`(`id`,`name`) VALUE('4', 'Tran Van D');
-INSERT INTO `ManagerStudent`.`Address`(`id`,`name`) VALUE('5', 'Tran Van E');
+INSERT INTO `ManagerStudent`.`Address`(`id`,`name`) VALUE('1', 'HN');
+INSERT INTO `ManagerStudent`.`Address`(`id`,`name`) VALUE('2', 'Nghe An');
+INSERT INTO `ManagerStudent`.`Address`(`id`,`name`) VALUE('3', 'Vinh');
+INSERT INTO `ManagerStudent`.`Address`(`id`,`name`) VALUE('4', 'HCM');
+INSERT INTO `ManagerStudent`.`Address`(`id`,`name`) VALUE('5', 'Ca Mau');
 
 
-INSERT INTO `ManagerStudent`.`Classes`(`id`,`name`,`language`,`description`) VALUE('1', 'Tran Van A','Java','Programer.OOP');
-INSERT INTO `ManagerStudent`.`Classes`(`id`,`name`,`language`,`description`) VALUE('2', 'Tran Van B','C++','Programer.OOP');
-INSERT INTO `ManagerStudent`.`Classes`(`id`,`name`,`language`,`description`) VALUE('3', 'Tran Van C','C#','Programer.OOP');
-INSERT INTO `ManagerStudent`.`Classes`(`id`,`name`,`language`,`description`) VALUE('4', 'Tran Van D','PHP','Programer.OOP');
-INSERT INTO `ManagerStudent`.`Classes`(`id`,`name`,`language`,`description`) VALUE('5', 'Tran Van E','Ruby','Programer.OOP');
+INSERT INTO `ManagerStudent`.`Classes`(`id`,`name`,`language`,`description`) VALUE('1', 'Lop A','Java','Programer.OOP');
+INSERT INTO `ManagerStudent`.`Classes`(`id`,`name`,`language`,`description`) VALUE('2', 'Lop B','C++','Programer.OOP');
+INSERT INTO `ManagerStudent`.`Classes`(`id`,`name`,`language`,`description`) VALUE('3', 'Lop C','C#','Programer.OOP');
+INSERT INTO `ManagerStudent`.`Classes`(`id`,`name`,`language`,`description`) VALUE('4', 'Lop D','PHP','Programer.OOP');
+INSERT INTO `ManagerStudent`.`Classes`(`id`,`name`,`language`,`description`) VALUE('5', 'Lop E','Ruby','Programer.OOP');
 
 
 INSERT INTO `ManagerStudent`.`Students`(`id`,`fullname`,`address_id`,`phone`,`class_id`) VALUE(1, 'Tran Van A',1,'0902123456',1);
@@ -95,6 +95,6 @@ INSERT INTO `ManagerStudent`.`Point` (`id`, `course_id`, `student_id`, `points`)
 
 SELECT `name`,COUNT(`id`) 'Tong Cac Hoc Vien Trong Lop'FROM `ManagerStudent`.`Classes` GROUP BY `name`;
 
-SELECT COUNT(`id`) 'Tổng số học viên ở các tỉnh' FROM `ManagerStudent`.`Address`;
+SELECT `name`, COUNT(`id`) 'Tổng số học viên ở các tỉnh' FROM `ManagerStudent`.`Address` GROUP BY `name`;
 
-SELECT AVG(`points`) 'Điểm Trung Bình Cac Lop' FROM `ManagerStudent`.`Point`;
+SELECT `name`, AVG(`points`) 'Điểm Trung Bình Cac Lop' FROM `ManagerStudent`.`Point` GROUP BY `name`;
